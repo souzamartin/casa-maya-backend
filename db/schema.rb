@@ -30,6 +30,7 @@ ActiveRecord::Schema.define(version: 2022_12_05_211926) do
     t.integer "customer_id"
     t.integer "item_id"
     t.integer "order_number"
+    t.boolean "complete"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

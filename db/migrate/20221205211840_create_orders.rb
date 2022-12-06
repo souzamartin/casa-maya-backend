@@ -4,6 +4,7 @@ class CreateOrders < ActiveRecord::Migration[6.1]
       t.integer :customer_id
       t.integer :item_id
       t.integer :order_number
+      t.boolean :complete
       t.timestamps
     end
   end
