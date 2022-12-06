@@ -5,6 +5,6 @@ class CustomersController < ApplicationController
 
     get '/customers/:id' do
         customer = Customer.find(params[:id])
-        customer.to_json
+        customer.to_json(include: :orders)
     end
 end
