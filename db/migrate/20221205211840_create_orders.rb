@@ -1,10 +1,9 @@
 class CreateOrders < ActiveRecord::Migration[6.1]
   def change
     create_table :orders do |t|
-      t.integer :customer_id
       t.integer :item_id
-      t.integer :order_number
       t.boolean :complete
+      t.integer :quantity
       t.timestamps
     end
   end

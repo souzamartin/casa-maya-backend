@@ -12,13 +12,6 @@
 
 ActiveRecord::Schema.define(version: 2022_12_05_211926) do
 
-  create_table "customers", force: :cascade do |t|
-    t.string "username"
-    t.string "name"
-    t.string "address"
-    t.integer "phone"
-  end
-
   create_table "items", force: :cascade do |t|
     t.string "name"
     t.string "description"
@@ -27,10 +20,9 @@ ActiveRecord::Schema.define(version: 2022_12_05_211926) do
   end
 
   create_table "orders", force: :cascade do |t|
-    t.integer "customer_id"
     t.integer "item_id"
-    t.integer "order_number"
     t.boolean "complete"
+    t.integer "quantity"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
