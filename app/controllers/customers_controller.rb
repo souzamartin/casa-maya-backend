@@ -4,11 +4,15 @@ class CustomersController < ApplicationController
     end
 
     get '/customers/:id' do
-        customer = Customer.find(params[:id])
-        customer.to_json(include: :orders)
+        customer = Customer.find(params[:id]) 
+        customer_orders = Customer.find(params[:id]).group_orders 
+        {
+            id: customer.id,
+            name: customer.name,
+            username: customer.username,
+            address: customer.address,
+            phone: customer.phone,
+            orders: customer_orders
+        }.to_json   
     end
-
-    # get '/customers/:id/orders' do
-    #     Customer.find(params[:id]).group_orders.to_json
-    # end
 end
