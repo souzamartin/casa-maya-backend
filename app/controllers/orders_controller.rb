@@ -21,6 +21,12 @@ class OrdersController < ApplicationController
         order.to_json(include: :item)
     end
 
+    patch '/orders/:id/checkout' do
+        order = Order.find(params[:id])
+        order.update(complete: params[:complete])
+        order.to_json(include: :item)
+    end
+
     delete '/orders/:id' do
         Order.find(params[:id]).destroy
     end
