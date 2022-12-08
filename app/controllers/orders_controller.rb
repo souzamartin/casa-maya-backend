@@ -12,7 +12,7 @@ class OrdersController < ApplicationController
     # end
 
     get '/orders/pending' do
-        Order.all.where(complete: false).to_json(include: :items)
+        Order.all.where(complete: false).to_json(include: :item)
     end
 
     get '/orders/complete' do
